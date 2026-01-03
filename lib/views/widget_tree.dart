@@ -6,7 +6,8 @@ import 'package:flutter2026/views/widgets/nav_bar_widget.dart';
 List<Widget> pages = [HomePage(), ProfilePage()];
 
 class WidgetTree extends StatefulWidget {
-  const WidgetTree({super.key});
+  const WidgetTree({super.key, required this.onBrightnessMode});
+   final Function(bool) onBrightnessMode;
 
   @override
   State<WidgetTree> createState() => _WidgetTreeState();
@@ -27,7 +28,8 @@ class _WidgetTreeState extends State<WidgetTree> {
           onPressed: () {setState(() {
             isDark=!isDark;
 
-          });},
+          });
+            widget.onBrightnessMode(isDark);},
           icon: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
         ),
       ),

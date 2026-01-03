@@ -5,8 +5,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDark=true;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +22,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(
           seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
+          brightness: isDark?Brightness.dark:Brightness.light,
         ),
       ),
-      home: WidgetTree(),
+      home: WidgetTree(onBrightnessMode: (value){isDark=value; setState(() {
+
+      });},),
     );
   }
 }
