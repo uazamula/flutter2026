@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add_alert_outlined),
       ),
-      bottomNavigationBar: NavBarWidget(onChangedBNItem: (index){},),
+      bottomNavigationBar: NavBarWidget(),
     );
   }
 }
