@@ -8,6 +8,13 @@ class myTextStyle{
       letterSpacing: 10
   );
 
+  static const TextStyle hugeTextStyle=TextStyle(
+      fontSize: 50,
+      color: Colors.white70,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 50
+  );
+
   static const TextStyle descriptionTextStyle=TextStyle(
       fontSize: 18,
       color: Colors.teal,
